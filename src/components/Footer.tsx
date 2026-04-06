@@ -38,6 +38,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-navy-foreground/50">
               <li><a href="#process" className="hover:text-cyan transition-colors">About Us</a></li>
               <li><a href="#plans" className="hover:text-cyan transition-colors">Managed Plans</a></li>
+              <li><a href="#services-pricing" className="hover:text-cyan transition-colors">One-Time Services</a></li>
               <li><a href="#" className="hover:text-cyan transition-colors">Blog</a></li>
               <li><a href="mailto:hello@huisbyte.nl?subject=Careers%20Enquiry" className="hover:text-cyan transition-colors">Careers</a></li>
               <li><a href="#" className="hover:text-cyan transition-colors">Privacy Policy</a></li>
