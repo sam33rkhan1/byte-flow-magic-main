@@ -2,10 +2,12 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Monitor } from "lucide-react";
+import { usePopup } from "@/context/PopupContext";
 
 const CTASection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { openBook, openRemote } = usePopup();
 
   return (
     <section className="py-24 md:py-40 section-navy relative overflow-hidden" ref={ref}>
@@ -30,13 +32,13 @@ const CTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" className="text-base px-8 py-6 rounded-xl gap-2" onClick={() => window.location.href = "mailto:hello@huisbyte.nl?subject=Book%20a%20Visit"}>
+            <Button variant="hero" size="lg" className="text-base px-8 py-6 rounded-xl gap-2" onClick={openBook}>
               Book a Visit <ArrowRight size={18} />
             </Button>
-            <Button variant="hero-outline" size="lg" className="text-base px-8 py-6 rounded-xl gap-2" onClick={() => window.location.href = "mailto:hello@huisbyte.nl?subject=Remote%20Support%20Request"}>
+            <Button variant="hero-outline" size="lg" className="text-base px-8 py-6 rounded-xl gap-2" onClick={openRemote}>
               <Monitor size={18} /> Start Remote Support
             </Button>
-            <Button variant="hero-outline" size="lg" className="text-base px-8 py-6 rounded-xl gap-2 border-destructive/50 hover:bg-destructive/20" onClick={() => window.location.href = "tel:+31201234567"}>
+            <Button variant="hero-outline" size="lg" className="text-base px-8 py-6 rounded-xl gap-2 border-destructive/50 hover:bg-destructive/20" onClick={() => window.location.href = "tel:+31634119547"}>
               <Phone size={18} /> Emergency Help
             </Button>
           </div>

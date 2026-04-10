@@ -29,7 +29,7 @@ const Footer = () => {
               <li><a href="#services" className="hover:text-cyan transition-colors">Microsoft 365 Support</a></li>
               <li><a href="#automation" className="hover:text-cyan transition-colors">Smart Home Setup</a></li>
               <li><a href="#services" className="hover:text-cyan transition-colors">Business IT</a></li>
-              <li><a href="tel:+31201234567" className="hover:text-cyan transition-colors">Emergency Recovery</a></li>
+              <li><a href="tel:+31634119547" className="hover:text-cyan transition-colors">Emergency Recovery</a></li>
             </ul>
           </div>
 
@@ -40,7 +40,7 @@ const Footer = () => {
               <li><a href="#plans" className="hover:text-cyan transition-colors">Managed Plans</a></li>
               <li><a href="#services-pricing" className="hover:text-cyan transition-colors">One-Time Services</a></li>
               <li><a href="#" className="hover:text-cyan transition-colors">Blog</a></li>
-              <li><a href="mailto:hello@huisbyte.nl?subject=Careers%20Enquiry" className="hover:text-cyan transition-colors">Careers</a></li>
+              <li><a href="mailto:info@huisbyte.nl?subject=Careers%20Enquiry" className="hover:text-cyan transition-colors">Careers</a></li>
               <li><a href="#" className="hover:text-cyan transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="hover:text-cyan transition-colors">Terms of Service</a></li>
             </ul>
@@ -49,13 +49,13 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-sm mb-4 uppercase tracking-wider text-navy-foreground/70">Contact</h4>
             <div className="space-y-3 text-sm text-navy-foreground/50">
-              <a href="mailto:hello@huisbyte.nl" className="flex items-center gap-2 hover:text-cyan transition-colors">
+              <a href="mailto:info@huisbyte.nl" className="flex items-center gap-2 hover:text-cyan transition-colors">
                 <Mail size={14} className="text-cyan shrink-0" />
-                hello@huisbyte.nl
+                info@huisbyte.nl
               </a>
-              <a href="tel:+31201234567" className="flex items-center gap-2 hover:text-cyan transition-colors">
+              <a href="tel:+31634119547" className="flex items-center gap-2 hover:text-cyan transition-colors">
                 <Phone size={14} className="text-cyan shrink-0" />
-                +31 20 123 4567
+                +31 6 34 11 95 47
               </a>
             </div>
             <div className="mt-6 flex gap-2">

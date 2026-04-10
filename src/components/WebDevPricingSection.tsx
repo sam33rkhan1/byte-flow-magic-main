@@ -5,59 +5,64 @@ import { Check } from "lucide-react";
 
 const plans = [
   {
-    name: "Basic",
-    price: "79",
-    period: "/month",
-    description: "Essential IT support for individuals",
+    name: "Starter",
+    price: "499",
+    period: "one-time",
+    description: "Perfect for individuals & small businesses getting online",
     features: [
-      "2 remote support sessions",
-      "Wi-Fi health check",
-      "Basic device tune-up",
-      "Email support",
-      "Next-day response",
+      "Up to 5 pages",
+      "Mobile-friendly design",
+      "Contact form",
+      "Basic SEO setup",
+      "Domain & hosting setup",
+      "1 round of revisions",
+      "Delivered in 7 days",
     ],
     popular: false,
   },
   {
-    name: "Standard",
-    price: "199",
-    period: "/month",
-    description: "Complete coverage for homes & freelancers",
+    name: "Business",
+    price: "899",
+    period: "one-time",
+    description: "A full website for growing businesses in Amsterdam",
     features: [
-      "Unlimited remote support",
-      "1 onsite visit per month",
-      "Microsoft 365 management",
-      "Smart home support",
-      "Security monitoring",
-      "4-hour response time",
+      "Up to 10 pages",
+      "Custom design to your brand",
+      "Mobile-friendly & fast",
+      "Contact & booking form",
+      "Google Analytics setup",
+      "Advanced SEO setup",
+      "2 rounds of revisions",
+      "Delivered in 14 days",
     ],
     popular: true,
   },
   {
-    name: "Premium",
-    price: "499",
-    period: "/month",
-    description: "Full-stack IT for growing businesses",
+    name: "E-commerce",
+    price: "1,299",
+    period: "one-time",
+    description: "Sell products online with a full online shop",
     features: [
-      "Unlimited remote & onsite",
-      "Intune device management",
-      "PowerShell automation",
-      "Network infrastructure",
-      "Priority emergency support",
-      "Dedicated IT manager",
-      "1-hour response time",
+      "Up to 20 pages",
+      "Full online shop setup",
+      "Payment integration",
+      "Product management",
+      "Mobile-friendly & fast",
+      "SEO & analytics setup",
+      "3 rounds of revisions",
+      "Delivered in 21 days",
     ],
     popular: false,
   },
 ];
 
-const PricingSection = () => {
+const WebDevPricingSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="plans" className="py-24 md:py-32 bg-background relative overflow-hidden" ref={ref}>
-      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full bg-cyan/5 blur-[120px]" />
+    <section id="web-dev-plans" className="py-24 md:py-32 bg-background relative overflow-hidden" ref={ref}>
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[120px]" />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -66,10 +71,13 @@ const PricingSection = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-16 md:mb-20"
         >
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-4">Managed Plans</p>
+          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-4">Web Development</p>
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tight text-foreground">
-            Predictable pricing,<br /><span className="gradient-text">premium support</span>
+            Simple pricing,<br /><span className="gradient-text">no surprises</span>
           </h2>
+          <p className="mt-6 text-muted-foreground text-lg max-w-xl mx-auto">
+            Fast, modern, mobile-friendly websites built to your brand. No templates — designed for your business.
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -111,7 +119,7 @@ const PricingSection = () => {
               <Button
                 variant={plan.popular ? "hero" : "outline"}
                 className="w-full rounded-xl py-5"
-                onClick={() => window.location.href = `mailto:info@huisbyte.nl?subject=Plan%20Enquiry%20-%20${encodeURIComponent(plan.name)}`}
+                onClick={() => window.location.href = `mailto:info@huisbyte.nl?subject=Website%20Enquiry%20-%20${encodeURIComponent(plan.name)}`}
               >
                 Get Started
               </Button>
@@ -123,4 +131,4 @@ const PricingSection = () => {
   );
 };
 
-export default PricingSection;
+export default WebDevPricingSection;

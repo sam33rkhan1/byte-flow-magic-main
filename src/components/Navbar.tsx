@@ -3,11 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/hooks/useTheme";
+import { usePopup } from "@/context/PopupContext";
 
 const navLinks = [
   { label: "Services", href: "#services" },
   { label: "How It Works", href: "#process" },
   { label: "Plans", href: "#plans" },
+  { label: "Web Dev Plans", href: "#web-dev-plans" },
+  { label: "One-Time Services", href: "#services-pricing" },
+  { label: "Emergency IT Support", href: "#emergency" },
   { label: "Automation", href: "#automation" },
   { label: "Testimonials", href: "#testimonials" },
 ];
@@ -16,6 +20,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { theme, toggle } = useTheme();
+  const { openBook, openRemote } = usePopup();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -63,10 +68,10 @@ const Navbar = () => {
           >
             {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </button>
-          <Button variant={scrolled ? "outline" : "hero-outline"} size="sm" onClick={() => window.location.href = "mailto:hello@huisbyte.nl?subject=Remote%20Support%20Request"}>
+          <Button variant={scrolled ? "outline" : "hero-outline"} size="sm" onClick={openRemote}>
             Remote Support
           </Button>
-          <Button variant="hero" size="sm" onClick={() => window.location.href = "mailto:hello@huisbyte.nl?subject=Book%20a%20Visit"}>
+          <Button variant="hero" size="sm" onClick={openBook}>
             Book a Visit
           </Button>
         </div>
@@ -99,8 +104,8 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-2 pt-2">
-                <Button variant="outline" size="sm" onClick={() => window.location.href = "mailto:hello@huisbyte.nl?subject=Remote%20Support%20Request"}>Remote Support</Button>
-                <Button variant="hero" size="sm" onClick={() => window.location.href = "mailto:hello@huisbyte.nl?subject=Book%20a%20Visit"}>Book a Visit</Button>
+                <Button variant="outline" size="sm" onClick={() => { setMobileOpen(false); openRemote(); }}>Remote Support</Button>
+                <Button variant="hero" size="sm" onClick={() => { setMobileOpen(false); openBook(); }}>Book a Visit</Button>
               </div>
             </div>
           </motion.div>

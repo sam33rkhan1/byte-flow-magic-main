@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Wrench, Building2, AlertTriangle } from "lucide-react";
+import { Wrench, Building2, AlertTriangle, Globe } from "lucide-react";
 
 const oneTimeServices = [
   { service: "On-site diagnostic & fix (1 hr)", price: "€85" },
@@ -17,6 +17,13 @@ const oneTimeServices = [
 const businessServices = [
   { service: "Azure AD / Entra ID setup (up to 10 users)", price: "€299" },
   { service: "Intune device enrolment (per device)", price: "€39/device" },
+];
+
+const webDevServices = [
+  { service: "Website redesign", price: "from €399" },
+  { service: "Landing page", price: "from €249" },
+  { service: "Website maintenance (per month)", price: "from €49/mo" },
+  { service: "Domain & hosting setup", price: "€79" },
 ];
 
 const emergencyServices = [
@@ -87,7 +94,7 @@ const OneTimeServicesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
 
           {/* Column 1 — Standard one-time */}
           <motion.div
@@ -137,16 +144,33 @@ const OneTimeServicesSection = () => {
               <div className="rounded-xl bg-destructive/10 border border-destructive/20 px-4 py-4 text-sm text-destructive/80">
                 <span className="font-semibold text-destructive">24/7 emergency line:</span>{" "}
                 <a
-                  href="tel:+31201234567"
+                  href="tel:+31634119547"
                   className="underline underline-offset-2 hover:text-destructive transition-colors"
                 >
-                  +31 20 123 4567
+                  +31 6 34 11 95 47
                 </a>
                 <p className="mt-1 text-xs text-destructive/60">1-hour response across all Amsterdam districts</p>
               </div>
             </div>
           </motion.div>
         </div>
+
+        {/* Web Development Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="max-w-6xl mx-auto flex flex-col gap-3 mb-8"
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+              <Globe size={16} className="text-primary" />
+            </div>
+            <h3 className="font-bold text-foreground">Web Development</h3>
+          </div>
+          <ServiceTable rows={webDevServices} />
+          <p className="text-xs text-muted-foreground mt-1">All websites are mobile-friendly, fast, and built to your brand. Contact us for a custom quote.</p>
+        </motion.div>
 
         {/* Footer note */}
         <motion.p

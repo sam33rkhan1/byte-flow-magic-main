@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Wifi, Monitor, Shield, Smartphone, CheckCircle } from "lucide-react";
+import { usePopup } from "@/context/PopupContext";
 
 const floatingCards = [
   { icon: Wifi, label: "Wi-Fi Optimized", value: "850 Mbps", color: "from-primary to-cyan", delay: 0, className: "top-[18%] left-[5%] md:left-[8%]" },
@@ -11,6 +12,7 @@ const floatingCards = [
 ];
 
 const HeroSection = () => {
+  const { openBook, openRemote } = usePopup();
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden section-navy">
       {/* Background glow effects */}
@@ -58,10 +60,10 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button variant="hero" size="lg" className="text-base px-8 py-6 rounded-xl" onClick={() => window.location.href = "mailto:hello@huisbyte.nl?subject=Book%20a%20Visit"}>
+            <Button variant="hero" size="lg" className="text-base px-8 py-6 rounded-xl" onClick={openBook}>
               Book a Visit
             </Button>
-            <Button variant="hero-outline" size="lg" className="text-base px-8 py-6 rounded-xl" onClick={() => window.location.href = "mailto:hello@huisbyte.nl?subject=Remote%20Support%20Request"}>
+            <Button variant="hero-outline" size="lg" className="text-base px-8 py-6 rounded-xl" onClick={openRemote}>
               Start Remote Support
             </Button>
           </motion.div>
