@@ -45,7 +45,7 @@ const AutomationSection = () => {
                     <f.icon size={18} className="text-cyan" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-primary-foreground mb-1">{f.title}</h4>
+                    <h3 className="text-sm font-bold text-primary-foreground mb-1">{f.title}</h3>
                     <p className="text-xs text-navy-foreground/50 leading-relaxed">{f.desc}</p>
                   </div>
                 </motion.div>

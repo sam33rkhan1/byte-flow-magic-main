@@ -59,6 +59,7 @@ const TestimonialsSection = () => {
 
           <div className="flex items-center justify-center gap-4 mt-8">
             <button
+              aria-label="Previous testimonial"
               onClick={prev}
               className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
             >
@@ -68,14 +69,18 @@ const TestimonialsSection = () => {
               {testimonials.map((_, i) => (
                 <button
                   key={i}
+                  aria-label={`Go to testimonial ${i + 1}`}
                   onClick={() => setCurrent(i)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    i === current ? "bg-primary w-6" : "bg-border"
-                  }`}
-                />
+                  className={`relative w-6 h-6 flex items-center justify-center`}
+                >
+                  <span className={`rounded-full transition-all ${
+                    i === current ? "bg-primary w-6 h-2" : "bg-border w-2 h-2"
+                  }`} />
+                </button>
               ))}
             </div>
             <button
+              aria-label="Next testimonial"
               onClick={next}
               className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
             >
