@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sun, Moon, ExternalLink } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -21,6 +21,8 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { theme, toggle } = useTheme();
   const { openBook, openRemote } = usePopup();
+  const { pathname } = useLocation();
+  const logoHref = pathname === "/web-studio" ? "https://huisbyte.nl" : "#";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -37,7 +39,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="flex items-center gap-2">
+        <a href={logoHref} className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-cyan flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-sm">HB</span>
           </div>
