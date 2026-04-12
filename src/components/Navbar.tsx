@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, ExternalLink } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/hooks/useTheme";
 import { usePopup } from "@/context/PopupContext";
@@ -9,7 +10,6 @@ const navLinks = [
   { label: "Services", href: "#services" },
   { label: "How It Works", href: "#process" },
   { label: "Plans", href: "#plans" },
-  { label: "Web Dev Plans", href: "#web-dev-plans" },
   { label: "One-Time Services", href: "#services-pricing" },
   { label: "Emergency IT Support", href: "#emergency" },
   { label: "Automation", href: "#automation" },
@@ -61,6 +61,16 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
+          <Link
+            to="/web-studio"
+            className={`flex items-center gap-1.5 text-sm font-semibold px-3 py-1.5 rounded-lg border transition-colors ${
+              scrolled
+                ? "border-primary/30 text-primary hover:bg-primary/10"
+                : "border-primary-foreground/30 text-primary-foreground hover:bg-white/10"
+            }`}
+          >
+            <ExternalLink size={13} /> Web Studio
+          </Link>
           <button
             onClick={toggle}
             className={`p-2 rounded-lg transition-colors ${scrolled ? "text-foreground hover:bg-secondary" : "text-primary-foreground hover:bg-white/10"}`}
@@ -104,6 +114,10 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-2 pt-2">
+                <Link to="/web-studio" onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 text-sm font-semibold text-primary border border-primary/30 rounded-lg px-3 py-2 hover:bg-primary/10 transition-colors">
+                  <ExternalLink size={14} /> Web Studio
+                </Link>
                 <Button variant="outline" size="sm" onClick={() => { setMobileOpen(false); openRemote(); }}>Remote Support</Button>
                 <Button variant="hero" size="sm" onClick={() => { setMobileOpen(false); openBook(); }}>Book a Visit</Button>
               </div>

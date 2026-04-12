@@ -82,7 +82,7 @@ const PricingSection = () => {
               className={`relative rounded-2xl p-8 hover-lift ${
                 plan.popular
                   ? "bg-gradient-to-b from-navy to-navy-light text-primary-foreground border-2 border-primary/30 scale-[1.02]"
-                  : "bg-card border border-border/50"
+                  : "bg-card border border-border/50 shadow-md"
               }`}
             >
               {plan.popular && (
